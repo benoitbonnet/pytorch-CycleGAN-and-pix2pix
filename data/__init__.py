@@ -68,6 +68,8 @@ class CustomDatasetDataLoader():
         It then create a multi-threaded data loader.
         """
         self.opt = opt
+        #print('la c opt')
+        #print(opt)
         dataset_class = find_dataset_using_name(opt.dataset_mode)
         self.dataset = dataset_class(opt)
         print("dataset [%s] was created" % type(self.dataset).__name__)
