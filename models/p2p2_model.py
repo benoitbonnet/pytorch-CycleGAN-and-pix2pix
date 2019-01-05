@@ -4,9 +4,9 @@ from .base_model import BaseModel
 from . import networks
 
 
-class Pix2PixModel2(BaseModel):
+class p2p2model(BaseModel):
     def name(self):
-        return 'Pix2PixModel2'
+        return 'p2p2model'
 
     @staticmethod
     def modify_commandline_options(parser, is_train=True):
@@ -21,8 +21,9 @@ class Pix2PixModel2(BaseModel):
 
         return parser
 
-    def initialize(self, opt):
-        BaseModel.initialize(self, opt)
+    def __initi__(self, opt):
+        BaseModel.__init__(self, opt)
+        print('yoooooooooooooooooooooooooooooooooo')
         self.isTrain = opt.isTrain
         # specify the training losses you want to print out. The program will call base_model.get_current_losses
         self.loss_names = ['G_GAN', 'G_L1', 'D_real', 'D_fake']

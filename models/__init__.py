@@ -34,5 +34,6 @@ def get_option_setter(model_name):
 def create_model(opt):
     model = find_model_using_name(opt.model)
     instance = model(opt)
+    print(instance.isTrain)
     print("model [%s] was created" % type(instance).__name__)
     return instance

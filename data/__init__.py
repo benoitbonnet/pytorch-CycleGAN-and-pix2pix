@@ -40,6 +40,8 @@ def find_dataset_using_name(dataset_name):
 def get_option_setter(dataset_name):
     """Return the static method <modify_commandline_options> of the dataset class."""
     dataset_class = find_dataset_using_name(dataset_name)
+    print('la c dataset_class')
+    print(dataset_class)
     return dataset_class.modify_commandline_options
 
 
@@ -68,8 +70,9 @@ class CustomDatasetDataLoader():
         It then create a multi-threaded data loader.
         """
         self.opt = opt
-        #print('la c opt')
-        #print(opt)
+        print('la c opt')
+        print(opt)
+        print('la c t opt')
         dataset_class = find_dataset_using_name(opt.dataset_mode)
         self.dataset = dataset_class(opt)
         print("dataset [%s] was created" % type(self.dataset).__name__)
